@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DItem</title>
+    <script src="https://kit.fontawesome.com/8a64723c39.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./styles/women.css">
+</head>
+<style>
+    body{
+      background-color: white;
+    }
+    .homeCatDiv{
+        text-decoration: none;
+        font-family:monospace;
+        color:rgb(87, 86, 86);
+    }
+    /* borders div*/
+    .cartDiv1{
+        height:50%;
+        /* border:1px solid blue; */
+        padding:2%;
+        display:flex;
+        gap:2%
+    }
+    .cartD1Sub{
+        width:45%;
+        height:90%;
+        padding:0% 2%;
+        /* border: 1px solid green; */
+        margin-bottom:3%
+    }
+    .cartImgDiv{
+        width:45%;
+        height:70%;
+        padding:2%;
+        display:flex;
+        gap:3%;
+        /* border: 1px solid green */
+    }
+    .cartData{
+        width:40%;
+        padding:2%;
+        /* border:1px solid purple; */
+        height:45%;
+        margin-bottom:3%;
+    }
+    .cartDataBel{
+        width:95%;
+        height:10%;
+        margin:2%;
+         text-align: center;
+        margin-bottom:4%;
+        /* border:1px solid navy */
+    }
+    .cartimgs{
+        width:22%;
+        height:50%;
+        border:1px solid rgb(119, 117, 117);
+        margin-bottom:-10%;
+    }
+    img{
+        width:100%;
+        height:100%;
+    }
+    h5{
+        font-size:20px;
+    }
+    hr{
+        background-color: gray;
+    }
+   
+    .code{
+        font-weight: lighter;
+        color:rgb(58, 54, 54);
+    }
+    #shopBagBtn{
+        height:fit-content;
+        text-align: center;
+        background-color: black;
+        color:white;
+        padding:2% 0% ;        
+    }
+    #DBoxBtn{
+        height:fit-content;
+        text-align: center;
+        background-color: rgb(166, 175, 175);
+        padding:2% 0% ;        
+    }
+    #promot{
+        height:fit-content;
+        text-align: center;
+        background-color: rgb(238, 220, 64);
+        padding:2% 0% ; 
+        font-size:12px;       
+    }
+
+    .product-div-3{
+         width:1100px;
+    }
+    .p-div-3{
+        padding-bottom:15%;
+    }
+    .afterDiv-div{
+        width:100%;
+        background-color: rgb(228, 215, 215);
+    }
+    .after-div-title{
+        padding:2% 0% 0% 0%;
+        text-align: center;
+        color:black;
+    }
+    .cartDataBel{
+        display:flex;
+    }
+
+    @media screen and (min-width:0px) and (max-width:960px){
+       .cartDiv1{
+           display:block;
+           width:1100px;
+       }
+       .cartD1Sub{
+           width:50%;
+           height:100%;
+       }
+       #simg{
+           display:none;
+       }
+       .cartData{
+           display:block;;
+           width:50%;
+           height:50%;
+           margin:auto;
+           margin-top:-5%;
+           /* border:1px solid yellow; */
+           margin-bottom:5%;
+       }
+   
+      #ship{
+          margin-top:20%;
+          margin-left:-50%;
+      }
+      .truck{
+        margin-left:-10px;
+      }
+    .p-div-3{
+        display:flex;
+    }
+    .catDivBel{
+        width:100%
+    }
+   
+}
+</style>
+<body>
+    <div id="header">
+        <div id="header1"></div>
+        <div id="header2"></div>
+        <div id="header3"></div>
+    </div>
+    <!-- header ends -->
+<div style="min-width:250px;padding:2%;margin-left:580px">
+    <a class="homeCatDiv" href="index.html">
+        HOME
+    </a>
+   <a class="homeCatDiv" href="">/</a>
+    <a class="homeCatDiv" href="women.html">
+        WOMEN
+    </a>
+</div>
+<!-- home div ends -->
+
+<div style="height:fit-content">
+  <div class="cartDiv1">
+     <div class="cartD1Sub">
+         <img id="mimg">
+       
+    </div>
+    <div class="cartD1Sub" id="cartData" >
+        <div class="cartData">
+            <h5 id="heading"></h5>
+            <p id="cat"class="code"></p>
+            <p id="price"></p>
+            <p id="color"class="code"></p>
+            <p>
+                <span>XS</span>
+                <span>S</span>
+                <span>M</span>
+                <span>L</span>
+                <span>XL</span>
+            </p>
+        </div>
+       <div class="cartDataBel" style="display:flex">
+           <div style="width:20px;
+           margin:2%;height:20px;display:inline-block;
+           border:1px solid black;
+           border-radius:20px;text-align:center"> ?</div>
+           <div style="padding:2%;        font-size:12px;       
+           ">
+            <span> 
+                Need more help? View the 
+                <span style="text-decoration: underline;">Size Chart
+                </span>
+                </span>
+               
+            </div>
+       </div>
+       <div class="cartDataBel"id="shopBagBtn">ADD TO SHOPPING BAG</div>
+       <div class="cartDataBel"id="DBoxBtn">ADD TO DREAM BOX</div>
+       <div class="cartDataBel" id="promot">This item is excluded from all promotional offers</div>
+    </div>
+
+  </div>
+  <!-- small img div -->
+
+  <div id="simg"style="width:fit-content;height:fit-content">
+    <div class="cartImgDiv">
+       <div class="cartimgs">
+           <img id="img1">
+       </div>
+       <div class="cartimgs">
+        <img id="img2">
+    </div>
+    <div class="cartimgs">
+        <img id="img3">
+    </div>
+    <div class="cartimgs">
+        <img id="img4">
+    </div>
+ </div>
+ <hr>
+</div>
+
+<!-- details div -->
+
+<div class="cartDiv1" id="detDiv" style="height:fit-content;">
+    <div class="cartD1Sub" >
+        <h5 class="heading">COMPOSITION</h5>
+        <p id="composition"class="code"></p>
+        <h5 class="heading">MEASUREMENTS</h5>
+        <p id="meas" class="code"></p>
+        <h5 class="code"style="font-size:15px">Product code:</h5>
+        <span><p id="code"class="code"></p></span>
+
+    </div>
+    <div class="cartD1Sub" id="det" >
+        <h5 class="heading">DETAILS</h5>
+        <p id="details"class="code"></p>
+
+    </div>
+</div>
+
+<hr>
+
+<div class="cartDiv1"id="ship" style="height:fit-content;">
+    <div class="cartData"style="width:45%;display:flex;gap:2%">
+        <div >
+            <li class="fa fa-truck" style="font-size:30px;">
+            </li>
+        </div>
+        <div class="cartData truck"style="width:fit-content">
+            <h5>SHIPPING</h5>
+            <h5>Express US$ 26,00</h5>
+            <p class="code">3-6 business days</p>
+            <p class="code" style="text-decoration: underline">VIEW ALL OPTIONS</p>
+        </div>
+    </div>
+    <div class="cartData refund"style="width:fit-content">
+        <h5>RETURNS</h5>
+        <p class="code">Fast and easy returns</p>
+        <h4>Returns</h4>
+        <p class="code">within 30 days</p>
+        <p class="code" style="text-decoration: underline;">VISIT OUR CUSTOMER CARE AREA</p>
+        <p class="code">
+            for more information on returns, exchanges and refunds
+        </p>
+    </div>
+</div>
+
+<!-- after product display -->
+<a href="special.html">
+<div class="afterDiv-div">
+    <h3 class="after-div-title" >MORE BY THIS DESIGNER</h3>
+</div>
+</a>
+
+<!-- slide1 -->
+<div class="product-div-3">
+    <div class="arrowIcons">
+        <li id="d5-r" style="font-size:40px"       
+        class="fas fa-arrow-circle-left ar-left"></li>
+    </div>
+    <div class="p-div-3">
+    <div id="slide1" style="display:flex"></div>
+
+    </div>
+    <div class="arrowIcons">
+        <li  id="d5-r"style="font-size:40px"       
+        class="fas fa-arrow-circle-right  ar-right"></li>
+</div>   
+</div>
+<!-- next -->
+<a href="special.html">
+    <div class="afterDiv-div">
+    <h3 class="after-div-title" >SIMILAR PRODUCTS</h3>
+</div>
+</a>
+<!-- slide1 -->
+<div class="product-div-3">
+    <div class="arrowIcons">
+        <li id="d5-r" style="font-size:40px"       
+        class="fas fa-arrow-circle-left ar-left"></li>
+     </div>
+    <div class="p-div-3">
+    <div id="slide2" style="display:flex"></div>
+
+    </div>
+    <div class="arrowIcons">
+        <li  id="d5-r"style="font-size:40px"       
+        class="fas fa-arrow-circle-right  ar-right"></li>
+ </div>   
+</div>
+
+
+<hr>
+
+<div class="afterDiv-div">        
+    <h3 class="after-div-title" >
+        <span class="code">See other</span>
+        VERSACE
+        <span class="code">items or other</span>
+        Sweatshirts
+    </h3>
+</div>
+
+<div id="footer1"></div>
+
+    <!-- footer-2 -->
+    <div id="footer2"></div>
+
+     <!-- footer-3 -->
+     <div id="footer3"></div>
+
+
+</body>
+</html>
+<script type="module">
+
+ import {header1, header2, header3} from "./components/header.js";
+ let head1 = document.getElementById("header1");
+ let head2 = document.getElementById("header2");
+ let head3 = document.getElementById("header3");
+
+
+ head1.innerHTML= header1();
+ head2.innerHTML= header2();
+ head3.innerHTML= header3();
+
+ document.getElementById("register_h1").addEventListener("click",function(){
+     window.location.href="register.html";
+ });
+
+ document.getElementById("header_left").addEventListener("click",function(){
+     window.location.href="women.html";
+ });
+
+ document.querySelector(".dropdown-content").addEventListener("click",function(){
+     window.location.href="women.html";
+ });
+
+ document.getElementById("home").addEventListener("click",function(){
+    window.location.href="index.html";
+});
+document.getElementById("shopping").addEventListener("click",function(){
+    window.location.href="cart.html";
+});
+
+ import { footer1, footer2, footer3 } from "./components/footer.js";
+
+var foot1 = document.getElementById("footer1");
+foot1.innerHTML= footer1();
+
+
+var foot2 = document.getElementById("footer2");
+foot2.innerHTML= footer2();
+
+var foot3 = document.getElementById("footer3");
+foot3.innerHTML= footer3();
+
+ var body = document.querySelector("body");
+ var cus = document.getElementById("customer");
+ var cusCare= document.getElementById("customer_care").addEventListener("click",function(){
+     cus.style="display:inline-block;position:relative;margin-top:15%;width:fit-content;padding:2%";
+ });
+ var cross = document.querySelector("#cross").addEventListener("click",function(){
+     cus.style ="display:none";
+     
+ });
+
+
+
+ var data = JSON.parse(localStorage.getItem("parray"));
+ console.log(data);
+//  if(data.length==""){
+    var mimg = document.getElementById("mimg");
+ var img1 = document.getElementById("img1");
+ var img2 = document.getElementById("img2");
+ var img3 = document.getElementById("img3");
+ var img4 = document.getElementById("img4");
+ var head = document.getElementById("heading");
+ var cat = document.getElementById("cat");
+ var price = document.getElementById("price");
+ var color = document.getElementById("color");
+ var compo = document.getElementById("composition");
+ var meas = document.getElementById("meas");
+ var det = document.getElementById("details");
+ var code = document.getElementById("code");
+
+     console.log(data);
+     mimg.src=data.img;
+     img1.src=data.img;
+     img2.src=data.img;
+     img3.src=data.img;
+     img4.src=data.img;
+
+     head.innerText = data.heading;
+     cat.innerText = data.category;
+     price.innerText= data.price;
+     color.innerText= data.color;
+     composition.innerText = data.fiber;
+     meas.innerText= data.length;
+     det.innerText= data.details;
+     code.innerText= data.code;
+
+//  }
+var count = JSON.parse(localStorage.getItem("cartYoox"));
+console.log(count);
+
+document.querySelector("#shopBagBtn").addEventListener("click",function(){
+    var x= data.price.split(" ");
+            var obj ={
+                data: data,
+                price: x[1],
+    }
+            var arr= [];
+            arr.push(obj);
+            console.log(arr);
+            localStorage.setItem("cartYoox",JSON.stringify(arr));
+            console.log(count.length,count);
+            document.getElementById("cartCoun").innerText=count.length;
+});
+
+document.querySelector("#DBoxBtn").addEventListener("click",function(){
+alert("Please login ");
+});
+
+</script>
+<script>
+// slies
+var pDiv3 = document.querySelector("#slide1");
+var div3Data = JSON.parse(localStorage.getItem("prodObj"));
+// console.log(pDiv3);
+let count=0;
+let check=3;
+let i=1;
+appendProduts(div3Data,count,check,i,pDiv3);
+var pDiv5 = document.querySelector("#slide2");
+appendProduts(div3Data,count,check,i,pDiv5);
+var pDiv = document.querySelector("#slide3");
+appendProduts(div3Data,count,check,i,pDiv);
+
+var prodDataArray;
+localStorage.setItem("p-array",JSON.stringify(prodDataArray));
+
+function appendProduts(data,count,check,i,loc){
+    let el = data[i-1];
+        if(i<0||i>data.length){
+            appendProduts(data,0,3,1,loc);
+              return;
+        }
+        if(i<=check){
+    
+            var div= document.createElement("div");
+            div.setAttribute=("class","p-append-div");
+            div.setAttribute=("class","catPage");
+
+            let img= document.createElement("img");
+            img.setAttribute=("class","d-3-img");
+            let title= document.createElement("p");
+            title.setAttribute=("class","d-3-title");
+            let cat= document.createElement("div");
+            cat.setAttribute=("class","d-3-cat");
+            let price= document.createElement("p");
+            price.setAttribute=("class","d-3-price");
+            
+            img.src= el.img;
+            title.innerText= el.heading;
+            cat.innerText = el.category;
+            price.innerText = el.price;
+
+            div.append(img,title,cat,price);
+            img.addEventListener("click",function(){
+             localStorage.setItem("p-array",JSON.stringify(el));
+             window.location.href="product.html";
+
+             });
+             console.log(div);
+            
+            loc.append(div);
+            appendProduts(data,count,check,i+1,loc);
+        }
+        
+        document.querySelector(".ar-left").addEventListener("click",function(){
+            pDiv3.innerText="";
+            console.log("1l",i,count);
+            count=count-1;
+            appendProduts(div3Data,count,check-2,i-2,loc);
+        });
+        document.querySelector(".ar-right").addEventListener("click",function(){
+            pDiv3.innerText="";
+            console.log("1r",i,count);
+            count=count+1;
+            appendProduts(div3Data,count,check+2,count*3,loc);
+        }); 
+        
+};
+
+        
+
+var x = document.querySelector(".afterDiv-div");
+x.addEventListener("click",function(){
+    window.location.href="special.html";
+});
+
+
+
+
+console.log(document.querySelector(".ar-left").style.display);
+
+</script>

@@ -1,0 +1,96 @@
+
+#sdiv1{
+    margin-left:5%;
+    margin-top: 10px;
+    width:1200px;
+    height:300px;
+    display:grid;
+    margin:auto;
+    grid-template-columns: 50% 50%;
+    /* border:1px solid red; */
+    margin-bottom:5%;
+}
+#sd2>img{
+    width:100%;
+    height:100%;
+}
+#sd1>div{
+    margin-top:0%;
+   text-align: center;
+    height:100%;
+    background-color:rgb(100, 100, 143);
+}
+/* div2 nav bar */
+.navbar{
+    margin-left:5%;
+    display:grid;
+    grid-template-columns: auto auto auto;
+    padding:2%; 
+    background-color: rgb(221, 215, 215);   
+}
+#sdiv3{
+    margin-left:5%;
+    grid-template-columns: repeat(4,auto);
+    background-color: rgb(235, 231, 231);
+}
+#sortDrop{
+    border:1px solid black;
+    display:none;
+    color:rgb(70, 67, 67);
+}
+
+/* sidebar */
+#slastDiv{
+    display:grid;
+    grid-template-columns: 200PX 900PX;
+    gap:5%;
+    margin:5% 5%;
+    /* border:1px solid purple; */
+}
+
+.sideCat{
+    border:1px solid rgb(212, 211, 211);
+    margin:1%;
+    width:100%;
+    /* border:1px solid hotpink; */
+}
+.Title{
+    display: inline-block;
+
+}.plus_min{
+    width:30px;
+    text-align: end;
+    display: inline-block;
+}
+.titleDrop{
+    display:none;
+    width:20px;
+    height:50px;
+    margin-left:5%;
+}
+
+#sproductDiv{
+    height:fit-content;
+    display:grid;
+    border:1px solid rgb(212, 211, 211);
+    grid-template-columns: repeat(4,20%);
+    gap:5%;
+    padding-bottom:40%;
+    margin-bottom:5%;
+    line-height: 0%;
+}
+#sproductDiv>button{
+    color: rgb(54, 3, 5);
+}
+
+@media screen and (min-width:0px) and (max-width:960px){
+     #sdiv1{
+         display:block;
+     }
+     #slastDiv{
+         display:block;
+     }
+     #sproductDiv{
+         display:block;
+     }
+}

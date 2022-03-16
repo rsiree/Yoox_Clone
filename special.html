@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>special</title>
+    <script src="https://kit.fontawesome.com/8a64723c39.js" crossorigin="anonymous"></script></head>
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./styles/mainPage.css">
+    <link rel="stylesheet" href="./styles/special.css">
+</head>
+<style>
+    body{
+        width:90%;
+    }
+    #sortDrop{
+        cursor:pointer;
+    }
+</style>
+
+<body>
+    <div id="header">
+        <div id="header1"></div>
+        <div id="header2"></div>
+        <div id="header3"></div>
+    </div>   
+<!--   header ends   -->
+
+<div id="sdiv1">
+    <div id="sd1">
+        <div>
+            <h1>IT'S COLD OUTSIDE</h1>
+            <h3>Discover winter wardrobe essentials</h3>
+        </div>
+    </div>
+    <div id="sd2">
+        <img src="https://www.yoox.com/images/yoox80/banners/6824_2_WintryMaterials_MAIN_W.jpg?634485886601286852#width=1379&height=637" alt="">
+    </div>
+
+</div>
+
+<div id="sdiv2" class="navbar">
+    <h3>CLOTHING</h3>
+    <h3>BAGS & ACCESSORIES</h3>
+    <h3>SHOES</h3>
+</div>
+<hr style="background-color:rgb(184, 179, 179)">
+<div id="sdiv3" class="navbar">
+    <h>SAVE SEARCH</h>
+    <h>100+ items</h>
+    <div>
+        <h id="sort">SORT BY <i class="fas fa-caret-down  icon1"></i></h>
+        <div id="sortDrop">
+            <p id="sortHL" click="sortHighLow()">HIGHEST PRICE</p>
+            <p id="sortLH">LOWEST PRICE</p>
+        </div>
+    </div>
+    <p>1</p>
+</div>
+
+<div id="slastDiv">
+  <div id="sidebar">
+    <div>
+        <div class="sideCat">
+            <div class="Title">SHOP BY CATEGORY</div>
+            <div class="plus_min">+</div>
+        </div>
+        <div class="titleDrop">
+            <h>ACCESSORIES</h>
+            <h>CLOTHING</h>
+            <h>SHOES</h>
+        </div>
+    </div>
+
+    <div>
+        <div class="sideCat">
+            <div class="Title">CATEGORIES</div>
+            <div class="plus_min">+</div>
+        </div>
+        <div class="titleDrop">
+            <h>Coats & Jackets</h>
+            <h>Dresses</h>
+            <h>Pants</h>
+            <h>Shirts</h>
+            <h>Handbags</h>
+            <h>Footwear</h>
+        </div>
+    </div>
+
+    <div>
+        <div class="sideCat">
+            <div class="Title">DESIGNERS</div>
+            <div class="plus_min">+</div>
+        </div>
+        <div class="titleDrop">
+            <input type="text" placeholder="search">
+            <h>SEE BY CHLOE</h>
+        </div>
+    </div>
+
+    <div>
+        <div class="sideCat">
+            <div class="Title">PRICE RANGE</div>
+            <div class="plus_min">+</div>
+        </div>
+        <div class="titleDrop">
+            <input type="number" placeholder="low">
+            <input type="number" placeholder="high">
+
+        </div>
+    </div>
+
+    <div>
+        <div class="sideCat">
+            <div class="Title">COLORS</div>
+            <div class="plus_min">+</div>
+        </div>
+        <div class="titleDrop">
+            <h>BLACK</h>
+            <h>BLUE</h>
+            <h>WHITE</h>
+            <h>GRAY</h>
+        </div>
+    </div>
+
+    <div>
+        <div class="sideCat">
+            <div class="Title">SIZES</div>
+            <div class="plus_min">+</div>
+        </div>
+        <div class="titleDrop">
+            <h>XS</h>
+            <h>S</h>
+            <h>M</h>
+            <h>L</h>
+        </div>
+    </div>
+
+    <div>
+        <div class="sideCat">
+            <div class="Title">PRINT</div>
+            <div class="plus_min">+</div>
+        </div>
+        <div class="titleDrop">
+            <h>One color</h>
+        </div>
+    </div>
+
+    <div>
+        <div class="sideCat">
+            <div class="Title">MATERIALS</div>
+            <div class="plus_min">+</div>
+        </div>
+        <div class="titleDrop">
+            <h>Cotton</h>
+            <h>Wool</h>
+            <h>Leather</h>
+        </div>
+    </div>
+
+  
+  </div>
+  <div id="sproductDiv"></div>
+</div>
+
+
+    
+<!-- footer starts     -->
+    <div id="footer1"></div>
+    <!-- footer-2 -->
+<div id="footer2"></div>
+
+     <!-- footer-3 -->
+<div id="footer3"></div>
+   
+
+
+
+</body>
+</html>
+
+<script type="module">
+
+// header1 addition
+
+import {header1, header2, header3} from "./components/header.js";
+let head1 = document.getElementById("header1");
+ let head2 = document.getElementById("header2");
+ let head3 = document.getElementById("header3");
+
+
+ head1.innerHTML= header1();
+ head2.innerHTML= header2();
+ head3.innerHTML= header3();
+
+
+ var body = document.querySelector("body");
+ var cus = document.getElementById("customer");
+ var cusCare= document.getElementById("customer_care").addEventListener("click",function(){
+     cus.style="display:inline-block;position:relative;margin-top:15%;width:fit-content;padding:2%";
+ });
+ var cross = document.querySelector("#cross").addEventListener("click",function(){
+     cus.style ="display:none";
+     
+ });
+
+
+document.getElementById("register_h1").addEventListener("click",function(){
+window.location.href="register.html";
+});
+
+
+document.getElementById("header_left").addEventListener("click",function(){
+     window.location.href="women.html";
+ });
+
+ document.querySelector(".dropdown-content").addEventListener("click",function(){
+     window.location.href="women.html";
+ });
+
+ document.getElementById("home").addEventListener("click",function(){
+    window.location.href="index.html";
+});
+
+document.getElementById("login_h1").addEventListener("click",function(){
+     window.location.href="login.html";
+ });
+
+import { footer1, footer2, footer3 } from "./components/footer.js";
+
+var foot1 = document.getElementById("footer1");
+foot1.innerHTML= footer1();
+
+
+var foot2 = document.getElementById("footer2");
+foot2.innerHTML= footer2();
+
+var foot3 = document.getElementById("footer3");
+foot3.innerHTML= footer3();
+
+
+var sort = document.querySelector("#sortDrop");
+var c1=0;
+document.querySelector("#sort").addEventListener("click",function(){
+    c1++;
+    if(c1%2 !=0){
+        sort.style="display:block";
+    }else{
+        sort.style="display:none";
+    }
+});
+// document.querySelector("#sortHL").addEventListener("click",function(){
+
+// });
+
+// document.querySelector("#sortLH").addEventListener("click",function(){
+
+var plMin = document.querySelector(".plus_min");
+var tDrop = document.querySelector(".titleDrop");
+var c=0;
+document.querySelector(".sideCat").addEventListener("click",function(){
+    c++;
+    if(c%2 !=0){
+        tDrop.style= "display:block";
+    plMin.textContent="-";
+    }else{
+        tDrop.style= "display:none";
+    plMin.textContent="+";
+    }
+});
+
+var cartArr =[];
+var sdata= JSON.parse(localStorage.getItem("prodObj"));
+var sdataDis = document.getElementById("sproductDiv");
+appendSData(sdata);
+
+// document.getElementById("sortLH").addEventListener("click",function(){
+//     // function sortHighLow(){
+//         console.log(sdata[0].price.split(" ")[1])
+//       sdata.sort(function(a,b){
+//           return Number(a.price.split(" ")[1].split(",")[0]) -Number(b.price.split(" ")[1].split(",")[0]) ;
+//       });
+//       console.log(sdata);
+//     appendSData(sdata);
+// });
+//     // }
+document.getElementById("sortHL").addEventListener("click",function(){
+    // console.log(2);
+      sdata.sort(function(a,b){
+          console.log(b.price.split(" ")[1].split(",")[0])
+          return Number(b.price.split(" ")[1].split(",")[0]) -Number(a.price.split(" ")[1].split(",")[0]) ;
+      });
+      console.log(sdata);
+    appendSData(sdata);
+});
+
+function appendSData(data){
+
+    data.forEach((el)=>{
+
+        var div = document.createElement("div");
+
+        var img = document.createElement("img");
+        var title = document.createElement("h5");
+        var category = document.createElement("p");
+        var price = document.createElement("h5");
+        var size = document.createElement("h6");
+        var divBtn = document.createElement("div");
+        var DBtn= document.createElement("button");
+        var cartBtn= document.createElement("button");
+
+        img.src= el.img;
+        title.innerText = el.heading;
+        category.innerText= el.category;
+        price.innerText = el.price;
+        size.innerText = "XS S M L";
+        DBtn.innerText= "Add to Dream Box";
+        cartBtn.innerText="Add to Shopping Bag";
+        cartBtn.addEventListener("click",function(){
+            var x= el.price.split(" ");
+            var obj ={
+                data: el,
+                price: x[1],
+            }
+            cartArr.push(obj);
+            console.log(cartArr.length);
+            document.getElementById("cartCoun").innerText=cartArr.length;
+            localStorage.setItem("cartYoox",JSON.stringify(cartArr));
+        });
+
+        divBtn.style="display:flex";
+        img.style="width:150px"
+        div.style="text-align:center";
+        DBtn.style="color:purple";
+        cartBtn.style="color:red";
+
+        img.addEventListener("click",function(){
+             localStorage.setItem("parray",JSON.stringify(el));
+             window.location.href="product.html";
+
+             });
+
+        divBtn.append(DBtn,cartBtn);
+        div.append(img,title,category,price,size,divBtn);
+
+        sdataDis.append(div);
+    });
+}
+
+document.getElementById("shopping").addEventListener("click",function(){
+    window.location.href="cart.html";
+});
+
+</script>
+
+
+

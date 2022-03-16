@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registert</title>
+    <script src="https://kit.fontawesome.com/8a64723c39.js" crossorigin="anonymous"></script></head>
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+
+</head>
+<style>
+    *body{
+        cursor:pointer   }
+    #register{
+        height:500px;
+        border:1px solid blue;
+        width:700px;
+        margin:50px; 
+        margin-left: 250px;       
+    }
+    .header2{
+        border: none;
+    }
+
+    hr.dashed{
+           border-bottom: 5px solid black;
+           border-style: dashed;
+           width:1200px;
+           height:2px;
+           border-top: none;
+       }
+       #Myoox_register{
+           height:fit-content;
+           padding:20px;
+           width:1200px;
+           background-color: rgb(232, 234, 235);
+           color:rgb(26, 25, 25);
+           margin: auto;
+           text-align: center;
+           font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+       }
+       .r1{
+        font-weight: normal;
+        font-family: Arial, Helvetica, sans-serif;
+        color:rgb(29, 28, 28);
+       }
+       a{
+           text-decoration: underline;
+           font-size: 14px;
+       }
+       input{
+           width:300px;
+       }
+
+       #register_form{
+           width:500px;
+           height:fit-content;
+           /* border:1px solid red; */
+           padding:30px;
+           margin:auto;
+           cursor:pointer;
+       }
+        
+       input[type="text"]{
+           width:100px;
+           height: 20px;
+           padding: 10px 400px 10px 10px;
+           margin-bottom: 15px;
+       }
+       
+#fb_div{
+    width:80%;
+    height:30px;
+    background-color: rgb(43, 76, 168);
+    border:none;
+    padding:10px;
+    margin:auto;
+    margin-bottom: 20px;
+}
+.fb1{
+    font-size: 24px;
+    padding-left: 50%;
+    padding-top:2%;
+    color:white
+}
+#google_div{
+    width:80%;
+    height:30px;
+    background-color: white;
+    border:2px solid rgb(243, 234, 234);
+    padding:10px;
+    margin:auto;
+}
+#google{
+    width:8%;
+      padding-left: 45%;
+}
+
+button{
+    width:300px;
+    padding:2%;
+    text-align:center;
+    background-color: rgb(95, 107, 177);
+    border:none;
+}
+
+</style>
+<body>
+    <!-- header start -->
+    <div id="header">
+        <div id="header1"></div>
+        <div id="header2"></div>
+    </div>
+
+<!-- registration part -->
+<!-- <div id="register"> -->
+       
+<hr class="dashed">
+<!-- div1 -->
+<div id="Myoox_register">
+    <h3>MYOOX</h3>
+    <p class="r1">REGISTRATION</p>
+    <p class="r1" style="font-size: 12px;">Take advantage of a faster checkout and enjoy promotions for registered customers only</p>
+    <a >Discover all the benefits</a>
+</div>
+
+<!-- div2 -->
+<div id="register_form">
+    <p class="r1" style="margin-left:20%">REGISTER WITH YOUR SOCIAL MEDIA ACCOUNT</p>
+    <div id="fb_div"  onmouseenter="change()" onmouseleave="nochange()">  
+      <li id="fb"class="fa fa-facebook fb1"></li>
+      <p id="tag" class="fb1"></p>
+    </div>
+
+    <div id="google_div"  onmouseenter="change2()" onmouseleave="nochange2()">     
+      <img id="google"
+      src="google.png" alt="">
+      <p id="tag2" class="fb1"></p>
+    </div>
+
+    <p class="r1" 
+    style="margin-top: 70px;
+    text-align: center;">
+        OR WITH YOUR EMAIL
+    </p>
+<form onsubmit="Register(event)">
+    <input class="input" id="name" type="text" placeholder=" NAME*">
+    <input type="text" id="email" placeholder="E-MAIL*">
+    <input type="text" id="pswd" placeholder="PASSWORD*">
+
+    <p>Personalize your shopping experience</p>
+    <label class="radio">
+        <input type="radio" name="answer" checked >
+       Female
+      </label>
+      
+      <label class="radio">
+        <input type="radio" name="answer">
+        Male
+      </label>
+      <input type="text" id="dob" placeholder="DATE OF BIRTH">
+      <input type="text" id="phone" placeholder="CELL PHONE">
+
+      <input type="submit">
+    </form>
+</div>
+<hr class="dashed">
+<!-- </div> -->
+
+    <!-- footer start -->
+     <!-- footer-3 -->
+     <div id="footer3"></div>
+
+</body>
+</html>
+
+<script type="module">
+
+// header addition
+    import {header1, header2, header3} from "./components/header.js";
+    let head1 = document.getElementById("header1");
+    let head2 = document.getElementById("header2");
+   
+    head1.innerHTML= header1();
+    head2.innerHTML= header2();
+
+
+    document.getElementById("header_left").addEventListener("click",function(){
+     window.location.href="women.html";
+ });
+
+
+ document.getElementById("home").addEventListener("click",function(){
+    window.location.href="index.html";
+});
+
+document.getElementById("login_h1").addEventListener("click",function(){
+    window.location.href="login.html";
+});
+
+
+// footer3 addition
+import { footer1, footer2, footer3 } from "./components/footer.js";
+var foot3 = document.getElementById("footer3");
+foot3.innerHTML= footer3();
+ 
+
+// register form
+var fb= document.querySelector("#fb");
+    var f= document.querySelector("#tag");
+    function change(){
+        fb.style="display:none";
+        f.textContent="REGISTER WITH FACEBOOK";
+        f.style = "font-size:15px;padding-left:100px;text-align:left;margin:auto";
+    }
+    function nochange(){
+        f.textContent="";
+        fb.style="display:visible";
+    }
+
+    var gl= document.querySelector("#google");
+    var g= document.querySelector("#tag2");
+    function change2(){
+        gl.style="display:none";
+        g.textContent="REGISTER WITH GOOGLE";
+        g.style = "font-size:15px;color:black;padding-left:100px;text-align:left;margin:auto";
+    }
+    function nochange2(){
+        g.textContent="";
+        gl.style="display:visible";
+    }
+
+
+    </script>
+    <script>
+
+    async function Register(e){
+        console.log(1);
+    try{
+
+        e.preventDefault();
+    
+
+    var register_data = {
+
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        password: document.getElementById("pswd").value,
+        mobile: document.getElementById("phone").value,
+        dob: document.getElementById("dob").value,
+    };
+
+    register_data = JSON.stringify(register_data);
+    console.log("register_data:",register_data);
+
+
+    } catch(error){
+        console.log("error:",error);
+    }
+
+    let reg_api = `https://masai-api-mocker.herokuapp.com/auth/register`;
+
+
+    let response = await fetch(reg_api, {
+
+        method:'POST',
+
+        body:register_data,
+
+
+        headers:{
+            "Content-Type":"application/json",
+        },
+    });
+
+    let data = await response.json();
+    console.log("data:",data);
+
+
+    if(data.error === true){
+        alert("user already exist");
+
+    }
+    else{
+        alert("registration successful");
+        window.location.href="login.html";
+    }
+}  
+</script>
+

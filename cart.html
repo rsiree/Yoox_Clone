@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <script src="https://kit.fontawesome.com/8a64723c39.js" crossorigin="anonymous"></script></head>
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./styles/mainPage.css">
+    <link rel="stylesheet" href="./styles/special.css">
+    <link rel="stylesheet" href="./styles/payment.css">
+</head>
+<style>
+#final{
+   margin: 5%;
+}
+
+</style>
+
+<body>
+    <div id="header">
+        <div id="header1"></div>
+        <div id="header2"></div>
+        <div id="header3"></div>
+    </div> 
+
+    <div id="final">
+        <h id="shipAddress">SHIPPING ADDRESS</h>
+        <div id="addDrop" class="Drop" style="display:none">
+
+            <form id="form">
+                <label>First Name</label><span>*</span>
+                <br>
+                <input type="text" id="fName">
+                <br>
+                <label>Last Name</label><span>*</span>
+                <br>
+                <input type="text" id="lName">
+                <br>
+                <label>Phone Number</label><span>*</span>
+                <br>
+                <input type="number" id="phNum">
+                <br>
+                <label>Address 1</label><span>*</span>
+                <br>
+                <input type="text" placeholder="Flat/House No" id="add1">
+                <br>
+                <label>Address 2</label><span> (optional)</span>
+                <br>
+                <input type="text" placeholder="Landmark">
+                <br>
+                <label>City</label><span>*</span>
+                <br>
+                <input type="text" id="city">
+                <br>
+                <label>State</label><span>*</span>
+                <br>
+                <input type="text" id="state">
+                <br>
+                <label>Pincode</label><span>*</span>
+                <br>
+                <input type="number" id="pin">
+                <br>
+    
+    
+            </form>
+
+            <input type="submit"id="confirm">
+        </div>
+    
+<hr>
+
+ <div>
+        <h>PAYMENT</h>
+        <div id="paymentDrop" class="Drop" >
+            <div id="cont1">
+                <div id="fdiv">
+                   
+                    <p>Select payment method</p>
+                    <br>
+                   <input type="radio" id="cardDetails" value="cardDet" name="paySelector">
+                   <label for="cardDetails">Pay Using Credit Card/ Debit Card/ Net Banking (Ccavenuepay)</label><br>
+                    <div id="cardInp"></div>
+                    <br>
+                    <hr>
+                    <br>
+                    <input type="radio" id="cod" value="cod" name="paySelector">
+                     <label for="cod">Cash On Delivery</label><br>
+                    <div id="codDisp"></div>
+                    <br>
+                    <br>
+                    
+                </div>
+                
+            </div>
+                 
+            <button id="proceed">PROCEED</button>
+        </div>
+    
+</div>
+
+    <hr>
+
+    <div> PREVIEW / CONFIRM</div>
+    <div id="cartDrop">
+
+    <div id="cartDisplay" style="display:block"></div>
+    <div style="display:flex;gap:5%;width:90%;margin-left:10%">
+        <div id="count"></div>
+        <span>|</span>
+        <div id="total"></div>
+        <button id="order">ORDER</button>
+    </div>
+   </div>
+    <hr>
+
+    <buttton id="back">Back to shopping</buttton>
+
+</div>
+
+    
+    <div id="footer1"></div>
+    <!-- footer-2 -->
+<div id="footer2"></div>
+
+     <!-- footer-3 -->
+<div id="footer3"></div>
+   
+
+
+
+</body>
+</html>
+
+<script type="module">
+
+// header1 addition
+
+import {header1, header2, header3} from "./components/header.js";
+let head1 = document.getElementById("header1");
+ let head2 = document.getElementById("header2");
+ let head3 = document.getElementById("header3");
+
+
+ head1.innerHTML= header1();
+ head2.innerHTML= header2();
+ head3.innerHTML= header3();
+
+ var body = document.querySelector("body");
+ var cus = document.getElementById("customer");
+ var cusCare= document.getElementById("customer_care").addEventListener("click",function(){
+     cus.style="display:inline-block;position:relative;margin-top:15%;width:fit-content;padding:2%";
+ });
+ var cross = document.querySelector("#cross").addEventListener("click",function(){
+     cus.style ="display:none";
+     
+ });
+
+
+document.getElementById("register_h1").addEventListener("click",function(){
+window.location.href="register.html";
+});
+
+
+document.getElementById("header_left").addEventListener("click",function(){
+     window.location.href="women.html";
+ });
+
+ document.querySelector(".dropdown-content").addEventListener("click",function(){
+     window.location.href="women.html";
+ });
+
+ document.getElementById("home").addEventListener("click",function(){
+    window.location.href="index.html";
+});
+
+document.getElementById("login_h1").addEventListener("click",function(){
+     window.location.href="login.html";
+ });
+
+
+//  cart div
+
+document.getElementById("shipAddress").addEventListener("click",function(){
+    addDrop.style="display:block";
+})
+
+
+
+document.querySelector("#confirm").addEventListener("click",function(){
+        paymentDrop.style="display:block";
+    addDrop.style="display:none";
+});
+
+
+// cart no change
+var x=0;
+var displayDiv = document.getElementById("cartDisplay");
+var data = JSON.parse(localStorage.getItem("cartYoox"));
+displayProd(data);
+
+window.addEventListener("load",function(){
+    localStorage.setItem("cartYoox", JSON.stringify(data));
+    displayProd(data);
+});
+
+count.innerText=`Items:  ${data.length}`;
+// console.log(data,data.length);
+
+function displayProd(data){
+    cartDisplay.innerText="";
+    data.map((el,index)=>{
+        // console.log(el.data);
+
+        var div = document.createElement("div");
+
+        var img = document.createElement("img");
+        var title = document.createElement("h5");
+        var category = document.createElement("p");
+        var price = document.createElement("h5");
+        var size = document.createElement("h6");
+        var remove= document.createElement("p");
+        var hr = document.createElement("hr");
+
+        img.src= el.data.img;
+        title.innerText = el.data.heading;
+        category.innerText= el.data.category;
+        price.innerText = el.data.price;
+        size.innerText = "XS S M L";
+        remove.innerText= "remove";
+
+        // console.log(el.price);
+        var  a = el.price.split(",");
+        var b = a[0]+a[1];
+        x  += Number(a[0]);
+        var ans= x+","+a[1]
+        // console.log(ans);
+        count.innerText=`Items:  ${data.length}`;
+        total.innerText=`Total: $ ${ans}`;
+
+        remove.addEventListener("click",function(){
+            var  a = el.price.split(",");
+            var b = a[0]+a[1];
+            var x = ans-Number(a[0]);
+            ans =x +","+a[1];
+            //  console.log(x);
+            if(x=="undefined"){
+                total.innerText=`Total: $ ${0}`;
+            }else{
+                total.innerText=`Total: $ ${ans}`;
+
+            }
+            removeFunction(index);
+        count.innerText=`Items: ${data.length--}`;
+        });
+        img.style="width:50px"
+        div.style="text-align:center;display:flex;gap:5%";
+        remove.style="color:purple";
+
+        div.append(img,title,category,price,size,remove);
+        // console.log(div);
+        displayDiv.append(div,hr);
+    });
+}
+
+function removeFunction(index){
+        data.splice(index,1);
+            localStorage.setItem("cartYoox",JSON.stringify(data));
+            displayProd(data);
+    }
+
+
+document.getElementById("order").addEventListener("click",function(){
+    var x = Math.round(Math.random(56)*12335);
+alert(`Your order have been successfully placed. Your order id is: ${x}. Thank you.`);
+});
+
+document.getElementById("back").addEventListener("click",function(){
+    window.location.href="home.html";
+});
+
+    // card payment
+
+    document.querySelector("#cardDetails").addEventListener("click", dispCard);
+
+    var count1=0;
+    var count2=0;
+
+    function dispCard(){
+        count1++;
+        if(count1==1){
+            document.querySelector("#codDisp").innerHTML="";
+            var mdiv=document.createElement("div");
+            mdiv.setAttribute("id","mdiv");
+
+            var img=document.createElement("img");
+            img.setAttribute("src","https://www.gccsl.in/website/images/ccavenue.png");
+            img.setAttribute("id","img")
+
+            var br4=document.createElement("br");
+
+            var card=document.createElement("input");
+            card.setAttribute("type", "number");
+            card.setAttribute("id", "card");
+            card.setAttribute("placeholder","Enter 16 Digit Card Number");
+
+            var br1=document.createElement("br");
+
+            var cvv= document.createElement("input");
+            cvv.setAttribute("type", "text");
+            cvv.setAttribute("id", "cvv");
+            cvv.setAttribute("placeholder","CVV");
+
+            var date=document.createElement("input");
+            date.setAttribute("type", "month");
+            date.setAttribute("id", "date");
+
+            var br2=document.createElement("br");
+
+            var name=document.createElement("input");
+            name.setAttribute("placeholder", "Enter Name on Card");
+            name.setAttribute("id","name");
+
+            var br3=document.createElement("br");
+            
+            document.querySelector("#cardInp").append(img,br1,card,br2,cvv,date,br3,name,br4);
+            
+
+            count2=0;
+        }
+    }
+
+    document.querySelector("#proceed").addEventListener("click",function(){
+    cardVer();
+});
+
+
+    function cardVer(){
+        var card=document.querySelector("#card").value;
+        var cvv=document.querySelector("#cvv").value;
+        var date=document.querySelector("#date").value;
+        date=date.split("-").map(Number);
+        if(card.length==16 && cvv=="123"){
+            document.querySelector("#cardInp").innerHTML="";
+            var oinp=document.createElement("input");
+            oinp.setAttribute("placeholder","Enter OTP");
+            oinp.setAttribute("type","number");
+            oinp.setAttribute("id", "oinp");
+            var obtn=document.createElement("button");
+            obtn.textContent="Submit";
+            obtn.addEventListener("click",function(){
+                otpSub();
+            })
+
+            document.querySelector("#cardInp").append(oinp,obtn);
+        } else {
+            document.querySelector("#card").value="";
+            document.querySelector("#cvv").value="";
+            document.querySelector("#date").value="";
+            alert("Invalid Card Details");
+        }
+    }
+
+    function otpSub(){
+        var oinp=document.querySelector("#oinp").value;
+        console.log(oinp);
+        if(oinp=="0000"){
+            cartDrop.style="display:block";
+             paymentDrop.style="display:none";
+        }
+    }
+
+
+    // cod
+    document.querySelector("#cod").addEventListener("click", dispCod);
+
+    
+
+    function dispCod(){
+        count2++;
+        if(count2==1){
+            document.querySelector("#cardInp").innerHTML="";
+            var a=document.createElement("p");
+            a.textContent="To confirm your Cash on delivery order, Click on the VERIFY button, a 6 digit code will be sent to your mobile number";
+            var b=document.createElement("button");
+            b.setAttribute("id","verify")
+            b.textContent="Verify";
+            b.addEventListener("click", function(){
+                otpVer();
+            });
+
+            document.querySelector("#codDisp").append(a,b);
+            count1=0;
+        }
+        
+    }
+
+    function otpVer(){
+        
+        var inp=document.createElement("input");
+        inp.setAttribute("placeholder", "Enter OTP");
+        inp.setAttribute("type", "number");
+        var con=document.createElement("button");
+        con.setAttribute("id", "codInp");
+        con.textContent="Confirm";
+        con.addEventListener("click",function(){
+            otpCheck();
+        });
+        document.querySelector("#codDisp").innerHTML="";
+        document.querySelector("#codDisp").append(inp,con);
+    }
+
+    function otpCheck(){
+        var x=document.querySelector("#codDisp>input").value;
+        if(x=="654321"){
+            cartDrop.style="display:block";
+             paymentDrop.style="display:none";
+            document.querySelector("#cont1").append(h1,h2,btn);
+
+        } else {
+            alert("Invalid OTP Code");
+            document.querySelector("#codDisp>input").value='';
+        }
+    }
+
+
+// cart completed
+
+import { footer1, footer2, footer3 } from "./components/footer.js";
+
+var foot1 = document.getElementById("footer1");
+foot1.innerHTML= footer1();
+
+
+var foot2 = document.getElementById("footer2");
+foot2.innerHTML= footer2();
+
+var foot3 = document.getElementById("footer3");
+foot3.innerHTML= footer3();
+
+</script>

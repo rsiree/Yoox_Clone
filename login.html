@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/8a64723c39.js" crossorigin="anonymous"></script></head>
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <title>login</title>
+</head>
+<style>
+    #main{
+        margin:auto;
+        width:300px;
+        padding:2%;
+        height:200px;
+        
+    }
+    form{
+        width: 30%;
+    }
+    hr.dashed{
+           border-bottom: 5px solid black;
+           border-style: dashed;
+           width:1200px;
+           height:2px;
+           border-top: none;
+       }
+       h1{
+           min-width:100px;
+       }
+       input{
+           margin-bottom:5%;
+           border:1px solid rgb(173, 169, 169);
+       }
+</style>
+<body>
+    <div id="header">
+        <div id="header1"></div>
+        <div id="header2"></div>
+
+    </div>
+    <hr class="dashed">
+
+    <div id="main">
+    
+            <form  onsubmit="login(event)">
+                <h1>log in</h1>
+               
+                <input type="text" id="email_login"placeholder="enter your email">
+                <input type="password" id="password_login" placeholder="password">
+                <input type="submit">
+                
+
+            </form>
+    </div>
+
+    <hr class="dashed">
+
+    <div id="footer1"></div>
+
+    <!-- footer-2 -->
+    <div id="footer2"></div>
+
+     <!-- footer-3 -->
+     <div id="footer3"></div> 
+</body>
+</html>
+<script type="module">
+     import {header1, header2, header3} from "./components/header.js";
+ let head1 = document.getElementById("header1");
+ let head2 = document.getElementById("header2");
+
+
+ head1.innerHTML= header1();
+ head2.innerHTML= header2();
+
+ var body = document.querySelector("body");
+ var cus = document.getElementById("customer");
+ var cusCare= document.getElementById("customer_care").addEventListener("click",function(){
+     cus.style="display:inline-block;position:relative;margin-top:15%;width:fit-content;padding:2%";
+ });
+ var cross = document.querySelector("#cross").addEventListener("click",function(){
+     cus.style ="display:none";
+     
+ });
+
+
+
+ document.getElementById("register_h1").addEventListener("click",function(){
+     window.location.href="register.html";
+ });
+
+ document.getElementById("header_left").addEventListener("click",function(){
+     window.location.href="women.html";
+ });
+
+
+ document.getElementById("home").addEventListener("click",function(){
+    window.location.href="index.html";
+});
+
+
+    import { footer1, footer2, footer3 } from "./components/footer.js";
+    
+    var foot1 = document.getElementById("footer1");
+    foot1.innerHTML= footer1();
+    
+    
+    var foot2 = document.getElementById("footer2");
+    foot2.innerHTML= footer2();
+    
+    var foot3 = document.getElementById("footer3");
+    foot3.innerHTML= footer3();
+
+
+</script>
+<script>
+
+
+
+async function login(e){
+    e.preventDefault();
+
+    let login_data = {
+
+        email: document.getElementById("email_login").value,
+        password: document.getElementById("password_login").value,
+    };
+
+    login_data = JSON.stringify(login_data)
+    let login_url =`https://masai-api-mocker.herokuapp.com/auth/login
+`
+
+    let response = await fetch(login_url, {
+
+        method:'POST',
+
+        body: login_data,
+
+        headers:{
+            "Content-Type":"application/json",
+        },
+    });
+
+    let data = await response.json();
+    console.log("data:",data);
+
+    let username = document.getElementById("email_login").value;
+
+    getUser(username, data.token);
+}
+
+
+async function getUser(username, token){
+    let api = `https://masai-api-mocker.herokuapp.com/user/${username}`;
+
+    let response = await fetch(api, {
+
+        headers: {
+
+            "Content-Type" : "application/json",
+            Authorization: `Bearer ${token}`,
+
+        },
+
+       
+    });
+
+    let data = await response.json();
+    console.log("data:", data);
+
+    if(data.error === true){
+        alert("Incorrect username or password");
+    }
+    else{
+        alert("login successful");
+        window.location.href="index.html";
+    }
+}
+
+</script>

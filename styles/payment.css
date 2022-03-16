@@ -1,0 +1,90 @@
+#form{
+    padding:5%;
+    width:20%;
+}
+#cartDrop{
+    display:none;
+}
+/* .Drop{
+    width:100px;
+    border: 1px solid red;
+    height:50px
+} */
+#paymentDrop{
+    display:none;
+}
+button{
+    background-color: black;
+    color:white;
+    width:150px;
+    border:none;
+}
+
+/* payment */
+#cont1{
+display: inline-block;
+width:50%;
+margin-left:10%;
+background-color:whitesmoke;
+cursor: pointer;
+}
+#fdiv{
+width:95%;
+margin: auto;
+}
+#fdiv>input{
+cursor: pointer;
+}
+#codDisp{
+padding-left:5%;
+font-size:14px;
+}
+#codInp{
+font-family: 'Inter', sans-serif;
+font-weight:500;
+cursor: pointer;
+}
+#cardInp{
+margin:auto;
+text-align:center;
+padding:2%;
+}
+label{
+cursor: pointer;
+}
+#card{
+width:40%;
+height:22px;
+margin-top:1%;
+margin-bottom:1%;
+}
+#cvv{
+width:8%;
+height:20px;
+margin-top:1%;
+margin-bottom:1%;
+margin-right:5%;
+}
+#name{
+width:40%;
+height:22px;
+margin-top:1%;
+margin-bottom:1%;
+}
+#button{
+cursor: pointer;
+}
+#cont1>h1{
+margin-left:9%;
+}
+#cont1>h2{
+margin-left:9%;
+}
+#continue{
+margin-left:40%;
+margin-bottom: 5%;
+cursor: pointer;
+}
+#verify{
+cursor: pointer;
+}

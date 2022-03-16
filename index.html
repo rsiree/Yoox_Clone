@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOOX FASHION AND DESIGN/ARTS</title>
+    <script src="https://kit.fontawesome.com/8a64723c39.js" crossorigin="anonymous"></script></head>
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./styles/mainPage.css">
+
+</head>
+
+<body>
+    <div id="header">
+        <div id="header1"></div> 
+                    
+    </div>
+
+    <!-- header ends -->
+    <div class="middle-part">
+        <div id="home2">
+            <div>YOOX</div>
+            <p style="min-width:150px">SHOP FASHION / DESIGN+ART</p> 
+        </div>
+
+    <!-- <div id="empty"></div> -->
+
+    <!-- category start -->
+    <div id="mainPage_ProdCat">
+        
+         <div class="ProdCat_Div productPageRef" id="cat1" ></div>
+         <!-- 2 -->
+         <div class="ProdCat_Div productPageRef" id="cat2"></div>
+         <!-- 3 -->
+         <div class="ProdCat_Div productPageRef" id="cat3" ></div>
+         <!-- 4 -->
+         <div class="ProdCat_Div productPageRef" id="cat4"></div>
+    </div>
+
+</div>
+
+    <!-- footer part -->
+    <div id="footer1"></div>
+         <!-- footer-2 -->
+    <div id="footer2"></div>
+     
+          <!-- footer-3 -->
+    <div id="footer3"></div>
+        
+
+
+
+</body>
+</html>
+
+<script type="module">
+
+// header1 addition
+
+import {header1, header2, header3} from "./components/header.js";
+ let header = document.getElementById("header1"); 
+ header.innerHTML= header1();
+
+ var body = document.querySelector("body");
+ var cus = document.getElementById("customer");
+ var cusCare= document.getElementById("customer_care").addEventListener("click",function(){
+     cus.style="display:inline-block;position:relative;margin-top:15%;width:fit-content;padding:2%";
+ });
+ var cross = document.querySelector("#cross").addEventListener("click",function(){
+     cus.style ="display:none";
+     
+ });
+
+ document.getElementById("register_h1").addEventListener("click",function(){
+     window.location.href="register.html";
+ });
+
+ document.getElementById("login_h1").addEventListener("click",function(){
+     window.location.href="login.html";
+ });
+
+
+// products addition
+
+import appendProdData from "./scripts/mainPage.js";
+ 
+var cat1 = document.getElementById("cat1");
+appendProdData("4.jpeg","WOMEN",cat1);
+
+var cat2 = document.getElementById("cat2");
+appendProdData("1.jpeg","MEN",cat2);
+
+var cat3 = document.getElementById("cat3");
+appendProdData("2.jpeg","KIDS",cat3);
+
+var cat4 = document.getElementById("cat4");
+appendProdData("3.jpeg","DESIGN + ART",cat4);
+
+// footer addition
+
+import { footer1, footer2, footer3 } from "./components/footer.js";
+
+var foot1 = document.getElementById("footer1");
+foot1.innerHTML= footer1();
+
+
+var foot2 = document.getElementById("footer2");
+foot2.innerHTML= footer2();
+
+var foot3 = document.getElementById("footer3");
+foot3.innerHTML= footer3();
+
+var redirect = document.querySelector("#mainPage_ProdCat").addEventListener("click",function(){
+    window.location.href="women.html";
+});
+ 
+</script>
