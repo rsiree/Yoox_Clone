@@ -1,6 +1,9 @@
 # Yoox_Clone
 
-As the website have several pages, I cloned a few pages and added functionalities. Coming to the TECH STACKS,
+This website is based on the deisgner products. I have cloned some of its original features and pages.
+
+# Deployment link:
+https://sleepy-villani-ecc144.netlify.app/
 
 # Tech Stacks:
 Frontend:
