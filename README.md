@@ -2,10 +2,13 @@
 
 This website is based on the deisgner products. I have cloned some of its original features and pages.
 
-# Deployment link:
+#### Deployment link:
 https://sleepy-villani-ecc144.netlify.app/
 
-# Tech Stacks:
+#### Github 
+https://github.com/rsiree/Yoox_Clone/
+
+#### Tech Stacks:
 Frontend:
 1.	HTML for website structure
 2.	CSS for styling
@@ -34,6 +37,9 @@ By selecting any particular special category from home page takes to special pag
 Item Page In this page the details of the product that we selected will be shown as shown below. And also most recently viewed, similar products grid we be present to select.
  
 6.	Cart page / checkout page This is the last page where Shipping address, Payment details, Order confirmation is made. We can also remove the items from the cart. After successfully placing order confirmation alert with and order id is displayed.
+
+#
+An invidual project 
 
 
 
